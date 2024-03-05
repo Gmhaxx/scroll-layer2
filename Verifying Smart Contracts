@@ -1,0 +1,35 @@
+Hardhat
+Modify hardhat.config.ts to point to Scroll’s RPC and block explorer API. For Blockscout, a dummy apiKey value is required, but anything works for its value. For Scrollscan, use your own API key.
+
+For example, if you are using Scroll Sepolia on Blockscout, your config will look like this:
+
+
+...
+
+const config: HardhatUserConfig = {
+  ...
+  networks: {
+    scrollSepolia: {
+      url: 'https://sepolia-rpc.scroll.io' || '',
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+  },
+  etherscan: {
+    apiKey: {
+      scrollSepolia: 'abc',
+    },
+    customChains: [
+      {
+        network: 'scrollSepolia',
+        chainId: 534351,
+        urls: {
+          apiURL: 'https://sepolia-blockscout.scroll.io/api',
+          browserURL: 'https://sepolia-blockscout.scroll.io/',
+        },
+      },
+    ],
+  },
+}
+
+...
