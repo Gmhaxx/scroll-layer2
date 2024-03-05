@@ -13,7 +13,7 @@ Clone the Repository: Clone this repository to your local machine using the foll
 
 bash
 Copy code
-git clone https://github.com/your-username/scroll-layer2.git
+git clone [https://github.com/your-username/scroll-layer2.git](https://github.com/scroll-tech)
 Install Dependencies: Navigate to the project directory and install dependencies using your preferred package manager:
 
 bash
